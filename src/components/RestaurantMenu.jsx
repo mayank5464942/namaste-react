@@ -21,7 +21,7 @@ const RestaurantMenu = () => {
         <h2>{"AvgRating: " + avgRating}</h2>
         <h2>{"cuisines: " + cuisines.join(",")}</h2>
       </div>
-      <div className=" px-10">
+      <div className="px-2">
         <h2 className="font-bold text-center text-lg">Menu</h2>
         <RestaurantMenuSection menuInfo={menuInfo} />
       </div>

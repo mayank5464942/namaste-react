@@ -8,8 +8,8 @@ const RestaurantMenuSection=(props)=>{
             return (<div className="">
                 <h2 className="font-bold border border-solid border-gray-200 text-center ">{title}</h2>
                 <ul>
-                    {itemCards.map(item=>(<div className="px-10 flex justify-between bg-gray-200 hover:bg-gray-300 items-center border border-solid border-gray-400 my-2"  key={item?.card?.info?.id} >
-                        <div className="m-2 px-10 text-center " key={item?.card?.info?.id+"1"}>
+                    {itemCards.map(item=>(<div className="px-2 flex justify-between bg-gray-200 hover:bg-gray-300 items-center border border-solid border-gray-400 my-2"  key={item?.card?.info?.id} >
+                        <div className="m-2 px-10" key={item?.card?.info?.id+"1"}>
                         <li>{item?.card?.info?.name}</li> 
                         <li>{"Rs. "+item?.card?.info?.price}</li>
                         </div>

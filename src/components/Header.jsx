@@ -9,10 +9,11 @@ const Header = () => {
     return (
       <div className="flex justify-between bg-pink-100 shadow-md mb-2">
         <div className="logo-container">
-          <img
+            <Link to="/"> <img
             className="w-56"
             src={LOGO_URL}
-          />
+          /></Link>
+         
         </div>
         <div className="flex items-center">
           <ul className="flex">
