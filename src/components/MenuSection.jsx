@@ -1,10 +1,11 @@
 import MenuList from "./MenuList.jsx";
 import {useState} from "react";
-const RestaurantMenuSection = ({ menuSection }) => {
+const RestaurantMenuSection = ({ menuSection,showItem,setShowItem }) => {
   const { title } = menuSection?.card?.card;
-  const [showItem,setShowItem]=useState(false);
+  const [toggle,showToggle]=useState(false);
+  
   const handleClick=()=>{
-    setShowItem(!showItem);
+    setShowItem(toggle);
   };
   return (
     <div className="">

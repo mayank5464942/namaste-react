@@ -1,9 +1,10 @@
 import Shimmer from "./Shimmer.jsx";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
 import { swiggy_api_URL } from "../utils/constants.js";
+import UserContext from "../utils/UserContext.js";
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
@@ -15,6 +16,7 @@ const Body = () => {
     fetchData();
   }, []);
 
+  const {loggedInUser,setUserName}=useContext(UserContext);
   const fetchData = async () => {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
@@ -74,6 +76,10 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div>
+            <label className="p-2 m-2" >UserContext</label>
+            <input type="text" className="p-2 m-2 border border-black border-solid" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)}/>
         </div>
       </div>
       <div className="flex m-2 flex-wrap">
